@@ -36,14 +36,14 @@ for submission in subreddit.new(limit=10):
             # Store the current id into our list
             posts_replied_to.append(submission.id)
 
-            # wait 0.5 seconds because reddit will only let you post once every 0.5 seconds
-            time.sleep(0.5)
+            # wait 1 seconds because reddit will only let you send a request 60 times per minute
+            time.sleep(1)
 
             # upvote post
             submission.upvote()
 
-            # wait 0.5 seconds because reddit will only let you post once every 0.5 seconds
-            time.sleep(0.5)
+            # wait 1 seconds because reddit will only let you send a request 60 times per minute
+            time.sleep(1)
 
 # Write our updated list back to the file
 with open("hellotherebot/posts_replied_to.txt", "w") as f:
