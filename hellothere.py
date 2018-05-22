@@ -29,7 +29,7 @@ for submission in subreddit.new(limit=10):
     if submission.id not in posts_replied_to:
 
         # Do a case insensitive search
-        if re.search("hello there", submission.title, re.IGNORECASE) or re.search("obi", submission.title, re.IGNORECASE) or re.search("obi-wan", submission.title, re.IGNORECASE) or re.search("kenobi", submission.title, re.IGNORECASE) or re.search("ewan", submission.title, re.IGNORECASE) or re.search("mcgregor", submission.title, re.IGNORECASE) or re.search("grievous", submission.title, re.IGNORECASE) or re.search("general", submission.title, re.IGNORECASE):
+        if (re.search("hello there", submission.title, re.IGNORECASE) or re.search("obi", submission.title, re.IGNORECASE) or re.search("obi-wan", submission.title, re.IGNORECASE) or re.search("kenobi", submission.title, re.IGNORECASE) or re.search("ewan", submission.title, re.IGNORECASE) or re.search("mcgregor", submission.title, re.IGNORECASE) or re.search("grievous", submission.title, re.IGNORECASE) or re.search("general", submission.title, re.IGNORECASE)) and not (re.search("chris",submission.title, re.IGNORECASE) or re.search("pratt",submission.title, re.IGNORECASE)):
             # Reply to the post
             submission.reply("hello there")
 
